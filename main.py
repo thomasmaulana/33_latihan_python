@@ -1,22 +1,17 @@
-while True:
-    input_1 = input("1 (atau ketik 'q' untuk keluar): ")
-    if input_1.lower() == 'q':
-        print("program selesai. Terima kasih!")
-        break
+import time
+import sys
+def kalimat_berjalan(teks, kecepatan=0.1):
+    for karakter in teks:
+        sys.stdout.write(karakter)
+        sys.stdout.flush()
+        time.sleep(kecepatan)
 
-    try:
-        angka = int(input_1)
-        angka2 = int(input("2: "))
-    except ValueError:
-        print("masukkan angka yang valid!\n")
-        continue
+angka = 0
 
-    if angka % 2 == 0:
-        print(f"angka {angka} adalah bilangan genap")
-    else :
-        print(f"angka {angka} adalah bilangan ganjil")
-    if angka2 % 2 == 0:
-        print(f"angka2 {angka2} adalah bilangan genap")
-    else :
-        print(f"angka2 {angka2} adalah bilangan ganjil")
-print("_" * 30)
+while angka < 100:
+    print("I LOVE YOU", angka, "%")
+    angka += 1
+    time.sleep(0.5)
+
+kalimat = "I LOVE YOU SOO much"
+kalimat_berjalan(kalimat, kecepatan=0.1)
