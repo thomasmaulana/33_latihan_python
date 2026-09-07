@@ -1,17 +1,29 @@
-import time
-import sys
-def kalimat_berjalan(teks, kecepatan=0.1):
-    for karakter in teks:
-        sys.stdout.write(karakter)
-        sys.stdout.flush()
-        time.sleep(kecepatan)
+import turtle
+import math
 
-angka = 0
+screen = turtle.Screen()
+screen.setup(800, 600)
+screen.bgcolor("white")
 
-while angka < 100:
-    print("I LOVE YOU", angka, "%")
-    angka += 1
-    time.sleep(0.5)
+screen.tracer(0)
 
-kalimat = "I LOVE YOU SOO much"
-kalimat_berjalan(kalimat, kecepatan=0.1)
+t = turtle.Turtle()
+t.hideturtle()
+t.penup()
+t.color("#dd2c2c")
+
+for scale in range(11, 17):
+    for i in range(170):
+        angel = i * (math.pi * 2) / 170
+        x = scale * math.sin(angel) * math.cos(angel) * 10
+        y = scale * (math.sin(angel) ** 2) * 10
+        t.goto(x, y)
+t.penup()
+t.goto(0, -50)
+t.color("#e6186d")
+
+t.write("happy birthday", align="center", font=("arial", 16, "bold"))
+
+screen.update()
+
+screen.mainloop()
